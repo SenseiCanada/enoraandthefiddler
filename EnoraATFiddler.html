@@ -9,12 +9,13 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Enora and the Fiddler.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Enora and the Fiddler" startnode="1" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="F660646B-95E0-4CC4-8C57-2F784146BE2C" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html{</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="575,250" size="100,100">{(set: $delightedCount to 0)
+<tw-storydata name="Enora and the Fiddler" startnode="112" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="F660646B-95E0-4CC4-8C57-2F784146BE2C" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html{</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="575,250" size="100,100">{(set: $delightedCount to 0)
 (set: $scaredCount to 0)
 (set: $fogMagic to false)
 (set: $sawMother to false)
 (set: $learnedFog to false)
 (set: $fogMagic to false)
+(set: $learnedRain to false)
 }My mother is dying. She claims she learned her (link-rerun: &quot;witchcraft&quot;)[(show: ?insertWitchcraft)(hide: ?insertWindow)(set: $scaredCount to it +1)(if: $delightedCount &gt;= 1)[(set: $delightedCount to 0)](hide:?whiskeyText)(show: ?whiskeyLink)] at the knee of Old Man Death. Still, she is dying.[
 
 It is hard to remember Mother&#39;s stories about Old Man Death and the Otherworld. She stopped telling them to me. After each story, I would ask to learn her witchcraft. She always said no. I always asked anyway. Until finally there were no more stories. Sometimes I try to make up my own. Mother won&#39;t listen to them, so I go to the garden and tell them to the hemlock and the nightshade. They are sad stories, full of little girls like me. (link-rerun: &quot;I don&#39;t like to remember them after I tell them&quot;)[(hide: ?insertWitchcraft)(set: $scaredCount to it -1)(hide:?whiskeyLink)(show:?whiskeyText)]](insertWitchcraft|
@@ -119,7 +120,9 @@ Behind the dolmen, you see [[black cliffs-&gt;CliffsStart]] looming to your left
     ]
 ]}</tw-passagedata><tw-passagedata pid="11" name="Dunes Start" tags="" position="1050,550" size="100,100">You set off accross the dunes to the [[woods-&gt;Forest]] that loom beyond the beach. The dark of your first night in the Otherworld begins to close around you.
 
-You crest the last dune and see fog snake itself around the black trunks of the forest. The trees stand like the beams of houses hollowed out by fire. Desperate charred arms reaching to the fading light of the sky.</tw-passagedata><tw-passagedata pid="12" name="Dolmen check" tags="" position="1275,400" size="100,100">&quot;That&#39;s no way to start an adventure,&quot; you hear behind you. &quot;You just got here afterall. You wouldn&#39;t leave the Otherworld without seeing all there is to see would you?&#39;&#39;
+You crest the last dune and see fog snake itself around the black trunks of the forest. The trees stand like the beams of houses hollowed out by fire. Desperate charred arms reaching to the fading light of the sky.
+
+|warning)[(text-color:red)[This assumes you&#39;ve already talked to the Fiddler. If you keep going here without talking to him first, it won&#39;t make any narrative sense.]](if: not $learnedRain)[(show: ?warning)]</tw-passagedata><tw-passagedata pid="12" name="Dolmen check" tags="" position="1275,400" size="100,100">&quot;That&#39;s no way to start an adventure,&quot; you hear behind you. &quot;You just got here afterall. You wouldn&#39;t leave the Otherworld without seeing all there is to see would you?&#39;&#39;
 
 [[Turn back to the hourglass -&gt;FiddlerStartDialogue]] 
 
@@ -599,19 +602,7 @@ total scared: (live: 0.5s)[(string: $scaredCount)]; add scared (link-rerun: &quo
 (set: $talked to false)
 }You hold breath as she crossed under the canopy. The fingers of mist seemed to beckon you closer, then coil themselves around your exposed skin. The inviting fingers of mist became frosty fangs that bite into your bones and make you shiver. 
 
-You walk into the forest. Sounds deaden in the mist. The crunching of wet leaves beneath your feet is like a timid murmur. A ways off in the darkness, you hear a rustling, then [[silence-&gt;Forest 1]].
-
-
-&lt;!--
-(click: ?snake)[(replace: ?placeholder)[$snakePassage]]
-
-(click: ?arms)[(replace: ?placeholder)[then a low growl. She turned to retreat out of the woods, but all was oppressive fog and looming trees around her. She stumbled caught her hem on a bramble, and tripped over a fallen sappling. Behing her the growl widened into a snarl. She wrenched her dress from the thorns and spun around. Her hands now bled from several small cuts.](set: $linksClicked to it + 1)]}
-{
-(if: $snakeBlinded is true)[(show: ?snakeBlindHook)]
-}
-|progressBlocked&gt;[Deeper in the gloom of the forest, she could see the light of a fire shining like a lighthouse in the fog. On and on through the shadows and mist she walked. But the light refused to get any closer.]
-|snakeBlindHook)[Enora suddenly remembered that serpents navigated by taste as well as sight and felt her heart leap in her |mistCloak&gt;[chest].]
---&gt;</tw-passagedata><tw-passagedata pid="44" name="Forest 1" tags="" position="1050,875" size="100,100">{(set: $eyesErased to false)
+You walk into the forest. Sounds deaden in the mist. The crunching of wet leaves beneath your feet is like a timid murmur. A ways off in the darkness, you hear a rustling, then [[silence-&gt;Forest 1]].</tw-passagedata><tw-passagedata pid="44" name="Forest 1" tags="" position="1050,875" size="100,100">{(set: $eyesErased to false)
 (set: $eraseEyes to &quot;milky, lamplike eyes&quot;)
 (set: $eraseFangs to &quot;bone white fangs&quot;)
 (set: $snakePassageOriginal to &quot;SnakePassageOriginal&quot;)
@@ -752,7 +743,7 @@ Balor extends a hand towards the net. You think you see it trembling.]
 (if: not $hasSnake and $talked)[
 	(show: ?bread)
 ]
-(if: $haveSnake)[
+(if: $hasSnake)[
 	(show: ?daughter)
 ]
 (if: not $hasSnake and not $talked)[
@@ -764,12 +755,14 @@ Balor extends a hand towards the net. You think you see it trembling.]
 (click: ?tree)[
 	(go-to: &quot;Snake&quot;)
 ]
-}</tw-passagedata><tw-passagedata pid="54" name="Escape" tags="" position="1325,1875" size="100,100">{(set: $hasRaven to true)
+}</tw-passagedata><tw-passagedata pid="54" name="Escape" tags="" position="1825,1975" size="100,100">{(set: $hasRaven to true)
 }Headless of Balor&#39;s roars behind you, you dive to where the bird struggles to right itself and scoop it up. Then you tear off blindly into the night, only stopping when the yells of the ogre are indisitrguishable from the howling of the wind.
 
 &quot;[[Dawn, dawn-&gt;First Leaf]],&quot; the raven caws weakly from under your arm.
 
-</tw-passagedata><tw-passagedata pid="55" name="BeachFiddlerSick" tags="" position="2375,700" size="100,100">When you arrive back on the beach, the Fiddler is right where you left him. The song he plays keens up and down like the gray waves of the ocean.
+</tw-passagedata><tw-passagedata pid="55" name="BeachFiddlerSick" tags="" position="2375,700" size="100,100">&#39;&#39;This is as far as I have made it as of 4/28/2024. What follows are half implemented scraps from earlier in the process. If you would like to go back to the beginning to try a different route, [[click here-&gt;Start]]. Thanks for reading!&#39;&#39;
+
+When you arrive back on the beach, the Fiddler is right where you left him. The song he plays keens up and down like the gray waves of the ocean.
 
 You feel as though someone has just told you there will be [[no more sunrises-&gt;SecondQuest1]].
 
@@ -876,25 +869,17 @@ From behind the hollow tree steps and [impossibly large man]&lt;justText|[imposs
 	(go-to: &quot;Balor&quot;)
     ] 
 }
-</tw-passagedata><tw-passagedata pid="71" name="Eithne" tags="" position="1125,1675" size="100,100">The heavy serpent unwraps itself from around your shoulders. Through the strands of the net it slithers and coils itself around and around Balor&#39;s arm. The last of its warm weight leaves you only once its head reaches Balor&#39;s shoulder. The adder hisses softly all the while.
+</tw-passagedata><tw-passagedata pid="71" name="Eithne" tags="" position="1125,1675" size="100,100">The heavy serpent unwraps itself from around your shoulders. Through the strands of the net it slithers and coils itself around and around Balor&#39;s arm. The last of its warm weight leaves you only once its head reaches Balor&#39;s shoulder. All the while, the adder hisses softly, almost like a purring cat.
 
 Balor&#39;s other hand caresses the serpent&#39;s body lovingly as it twists up his arm.
 
-&quot;I was foolish to believe in prophecy,&quot; he says. It is almost a whisper, and you see a tear beading at the corner of his blind eye. &quot;I only sought to avoid a monstrous fate.&quot; He wipes his face, smearing blood and [[tears-&gt;Eithne1]] across this cheek. &quot;And yet here I am regardless. Will you ever forgive me?&quot;</tw-passagedata><tw-passagedata pid="72" name="Snake" tags="" position="1400,1675" size="100,100">You struggle against the strands of the net, but they do not relinquish their hold.
+&quot;I was foolish to believe in prophecy,&quot; he says. It is almost a whisper, and you see a tear beading at the corner of his blind eye. &quot;I only sought to avoid a monstrous fate.&quot; He wipes his face, smearing blood and [[tears-&gt;Eithne1]] across this cheek. &quot;And yet here I am regardless. Will you ever forgive me?&quot;</tw-passagedata><tw-passagedata pid="72" name="Snake" tags="" position="1400,1675" size="100,100">You struggle against the strands of the net, but they do not [relinquish]&lt;release| their hold.
 
-You try to wipe them away with the spell that the Fiddler taught you, but the net hangs sheltered from the rain by the boughs of the tree that holds it up. The netting is still too dry to be washed away with magic.
+[You try to wipe them away with the spell that the Fiddler taught you, but the net hangs sheltered from the [[rain-&gt;Snake1]] by the boughs of the tree that holds it up. The netting is still too dry to be washed away with magic.](noMagic|
 
-Above the patter of the rain and the fizzing of the dying fire you hear a new sound.
-
-The eye-less adder, somehow even larger now that you can see it properly in the firelight, slithers down the trunk of the Balor&#39;s tree. Like deadly molasses, it drips closer and closer to the giant man&#39;s ear. You see its forked tongue dart out once, twice. three times.
-
-The blind serpent opens its mouth wide and sinks its fangs into Balor&#39;s thick neck. Balor coughs and splutters awake. He struggles to his feet and grasps at his neck. Finding the adder&#39;s still attached, he wrenches at it. The serpent does not relinquish its hold. Already you can see the veins around the bite start to blacken. Balor tries again to pull the serpent off of him, but his grip weekens and he falls to his knees.
-
-Balor tries to choke out a word. He falls to the ground, his body twitches, then lies still.
-
-The blind serpent uncleaches its fangs. Then turns into a woman.
-
-
+{
+(click: ?release)[(show: ?noMagic)]
+}
 </tw-passagedata><tw-passagedata pid="73" name="Eithne1" tags="" position="1125,1800" size="100,100">{(set: $wetKnot to &quot;chords of the knot holding the net aloft are now wet with rain&quot;)
 }While his attention is on the serpent, you notice that the (link: $wetKnot,(action: &quot;mouseout&quot;))[|wetKnot&gt;[chords of the knot holding the net aloft are now wet with rain(go-to: &quot;EithneNoKnot1&quot;)]].
 
@@ -925,9 +910,9 @@ Balor sniffs the air again. &quot;She has followed you here, dearest daughter.&q
 (click: ?grab)[
 	(go-to: &quot;Escape&quot;)
 ]
-}</tw-passagedata><tw-passagedata pid="76" name="First Leaf" tags="" position="1375,2025" size="100,100">Remembering what you have learned about the [[Otherworld-&gt;Escape2]], you feel for the clover that is still securely tucked behind your ear.
+}</tw-passagedata><tw-passagedata pid="76" name="First Leaf" tags="" position="1975,1975" size="100,100">Remembering what you have learned about the [[Otherworld-&gt;Escape2]], you feel for the clover that is still securely tucked behind your ear.
 
-One of the three leaves has wilted.</tw-passagedata><tw-passagedata pid="77" name="Escape2" tags="" position="1525,1825" size="100,100">Around you, motes of pale yellow light tickle their way amongst the solemn trunks. The wind subsides to a breeze.
+One of the three leaves has wilted.</tw-passagedata><tw-passagedata pid="77" name="Escape2" tags="" position="2100,1975" size="100,100">Around you, motes of pale yellow light tickle their way amongst the solemn trunks. The wind subsides to a breeze.
 
 Far off, you hear the dull crashing of [[waves-&gt;BeachFiddlerSick]]</tw-passagedata><tw-passagedata pid="78" name="SeaStack1" tags="" position="550,1050" size="100,100">{(enchant: &quot;Mougenn&quot;, (text-style: &quot;blur&quot;))
 }The rocks at it base suffer you to climb on top of them. They are damp, but no longer slick.
@@ -1150,7 +1135,135 @@ Closing the door and securing the shutters, you notice that the greyness of the 
 
 Opening the cottage door, you see that the sea stack is once more wreathed in fog. The whiteness glows faintly yellow. It must be dawn, your [[first-&gt;LeafCheck]] in the Otherworld. But you [[cannot linger-&gt;BeachFiddlerSick]].</tw-passagedata><tw-passagedata pid="97" name="LeafCheck" tags="" position="725,2400" size="100,100">Remembering what you have learned about the Otherworld you feel for the clover that is still securely tucked behind your ear.
 
-One of the three leaves has wilted. Time to [[move along-&gt;BeachFiddlerSick]].</tw-passagedata></tw-storydata>
+One of the three leaves has wilted. Time to [[move along-&gt;BeachFiddlerSick]].</tw-passagedata><tw-passagedata pid="98" name="Snake1" tags="" position="1275,1800" size="100,100">Above the patter of the rain and the fizzing of the dying fire you hear a new [sound]&lt;sound|.[
+
+The eye-less adder, somehow even larger now that you can see it properly in the firelight, slithers down the trunk of the Balor&#39;s tree. Like [deadly]&lt;deadly| molasses, it drips closer and closer to the giant man&#39;s ear. You see its forked tongue dart out once, twice. three times.](snakeDescend|[
+
+The blind serpent opens its mouth wide and sinks its fangs into Balor&#39;s thick neck. Balor coughs and splutters awake. He struggles to his feet and grasps at his neck. Finding the adder still attached, he wrenches at it. The [[serpent-&gt;Snake2]] does not relinquish its hold. Already you can see the veins around the bite start to blacken. Balor tries again to pull the serpent off of him, but his grip weekens and he falls to his knees.
+
+Balor tries to choke out a word. He topples to the ground, his body twitches, then lies still.](BalorStruggle|{
+
+(click: ?sound)[(show: ?snakeDescend)]
+(click: ?deadly)[(show: ?BalorStruggle)]
+}
+</tw-passagedata><tw-passagedata pid="99" name="Snake2" tags="" position="1425,1800" size="100,100">The blind serpent uncleanches its fangs. Then turns into a woman.
+
+She stands almost as tall as Balor. Just like him, her chin is covered in gore. Just like him, she is blind. Her skin is white, her long hair runs soaked by the rain along her back. The tatters of a sable dress hang about her like lichen from a sickly sappling.
+
+&quot;Curse, curse,&quot; caws the raven, then flies off into the darkness of the forest.
+
+Curses indeed. Off flies the sight of the blind. But your are still bound in Balor&#39;s trap. Your mind races. The snake, the woman, you correct yourself, killed Balor, so she might free you if you [[call out-&gt;CallEithne]] to her. Then again, she killed Balor, best to [[stay silent-&gt;EithneConvo]], lest she do the same to you.</tw-passagedata><tw-passagedata pid="100" name="EithneConvo1" tags="" position="1450,2050" size="100,100">{(set: $knowEithne to false)
+(set: $EithneWitch to false)
+(set: $EithneMother to false)}You see a forked tongue flick briefly out of her mouth as she raises her eye-less face towards you.
+
+&quot;I know who you are, little witch. I can taste your mother&#39;s scent on your air.&quot;
+
+For a moment, you are stunned. You are quite sure you have never seen this woman in your life before, or heard Mother talk about someone like her. Your mind races.
+
+&quot;[[Who are you?-&gt;EithneWho]]&quot;
+
+&quot;[[You know my mother?-&gt;EithneMother]]&quot;
+
+&quot;[[I&#39;m not a witch-&gt;EithneWitch]].&quot;</tw-passagedata><tw-passagedata pid="101" name="EithneConvo" tags="" position="1525,1925" size="100,100">You stay silent and [[watch-&gt;EithneConvo1]]. The woman kneels down, feels along Balor&#39;s body for his face, and gently runs a finger along his brow.
+
+&quot;How strange,&quot; you hear the woman say. Her voice is husky and breaks as she speaks. Perhaps she is sick. Or perhaps she has not spoken in some time. &quot;How much sweeter it was to dwell on revenge than to enact it.&quot;</tw-passagedata><tw-passagedata pid="102" name="CallEithne" tags="" position="1375,1925" size="100,100">&quot;Please, help me,&quot; you call out. &quot;Get me down.&quot;
+
+The woman pauses. She stoops to feel around on the ground near Balor. Her hands find the root to which the net is secured. Her fingers work at the knot for a moment, then you feel yourself falling back to earth. You land on the ground hard, and scramble to free yourself from the net&#39;s weight.
+
+&quot;How strange,&quot; you [hear]&lt;hear| the [[woman-&gt;EithneConvo1]] say. [Her voice is husky and breaks as she speaks. Perhaps she is sick. Or perhaps she has not spoken in some time. &quot;How much sweeter it was to dwell on revenge than to enact it.&quot;
+
+You look back to her and see that she is kneeling by Balor&#39;s body, her hand gently caressing his brow.](revenge|
+
+&quot;Who are you?&quot; you ask.{
+
+(click: ?hear)[(show: ?revenge)]
+}</tw-passagedata><tw-passagedata pid="103" name="EithneWho" tags="" position="1650,2175" size="100,100">{(set: $knowEithne to true)}
+“I am Eithne, the Fomorian, Daughter of Balor, and Mother of Lugh.”
+
+[&quot;[[You know my mother?-&gt;EithneMother]]&quot;](goMother|
+
+[&quot;[[I&#39;m not a witch-&gt;EithneWitch]].&quot;](goWitch|
+
+[&quot;[[My mother is dying, I need the Sight of the Blind to save her-&gt;EithneSight]].](goNext|{
+
+(if: not $EithneWitch)[(show: ?goWitch)]
+(if: not $EithneMother)[(show: ?goMother)]
+(if: $EithneWitch and $EithneMother and $knowEithne)[(show: ?goNext)]
+}</tw-passagedata><tw-passagedata pid="104" name="EithneMother" tags="" position="1475,2175" size="100,100">{(set: $EithneMother to true)}“I do not know your mother,&quot; says |woman)[the woman][Eithne](Eithne|, &quot;but I know the bile of betrayal that her scent brings to my mouth.&quot; Her tongue flicks out once more and she steps closer to you. 
+
+&quot;When Balor heard the prophecy that his own grandson would be his undoing, he locked me away. I feared the prophecy as well. Such was my love for my father that a tower, I would have endured. Even a cage, I would have suffered. But Balor hired a witch, your mother, to trap me in the flesh of a slithering serpent.”
+
+&quot;[[Why would my mother do such a thing?-&gt;EithneMother1]]&quot;
+
+[&quot;[[Who are you?-&gt;EithneWho]]&quot;](who|{
+
+(if: $knowEithne)[
+	(show: ?Eithne)
+](else:)[(show: ?woman)(show: ?who)]
+}
+
+</tw-passagedata><tw-passagedata pid="105" name="EithneWitch" tags="" position="1300,2175" size="100,100">{(set: $EithneWitch to true)}“You’ve washed away my eyes with the rains of the Otherworld,&quot; says |woman)[the woman][Eithne](Eithne|, &quot;you are a witch, child, there is no denying it.”
+
+&quot;I could get them back for you,&quot; you want this to be true. Perhaps the Fiddler can teach you such [[a spell-&gt;EithneWitch1]] when you return to him.{
+
+(if: $knowEithne)[
+	(show: ?Eithne)
+](else:)[(show: ?woman)(show: ?who)]
+}</tw-passagedata><tw-passagedata pid="106" name="EithneMother1" tags="" position="1475,2400" size="100,100">|woman)[The woman][Eithne](Eithne| smiles as though she has eaten something sour.
+
+“My father was a man of his word. Wealth, safety, love, bloody retribution, these are promises Balor has made to myself and many others, and his promises were always kept. It made him difficult to refuse. I do not blame your mother, little witch, for what she did to me.”
+
+[&quot;[[Who are you?-&gt;EithneWho]]&quot;](who|
+
+[&quot;[[But I&#39;m not a witch-&gt;EithneWitch]].&quot;](goWitch|
+
+[&quot;[[My mother is dying, I need the Sight of the Blind to save her-&gt;EithneSight]].](goNext|{
+
+(if: $knowEithne)[
+	(show: ?Eithne)
+](else:)[(show: ?woman)(show: ?who)]
+(if: not $EithneWitch)[(show: ?goWitch)]
+(if: $EithneWitch and $EithneMother and $knowEithne)[(show: ?goNext)]
+}</tw-passagedata><tw-passagedata pid="107" name="EithneWitch1" tags="" position="1275,2375" size="100,100">|woman)[The woman][Eithne](Eithne| sighs.
+
+“The Otherworld is fickle, and it makes everything within it mutable. As soon as I crossed over, I discovered the blessed relief of changing back into my own body. But the serpent still had its uses. If your mother’s spell wanes in this place, perhaps yours will as well.”
+
+[&quot;[[Who are you?-&gt;EithneWho]]&quot;](who|
+
+[&quot;[[You know my mother?-&gt;EithneMother]]&quot;](goMother|
+
+[&quot;[[My mother is dying, I need the Sight of the Blind to save her-&gt;EithneSight]].](goNext|{
+
+(if: $knowEithne)[
+	(show: ?Eithne)
+](else:)[(show: ?woman)(show: ?who)]
+(if: not $EithneMother)[(show: ?goMother)]
+(if: $EithneWitch and $EithneMother and $knowEithne)[(show: ?goNext)]
+}</tw-passagedata><tw-passagedata pid="108" name="EithneSight" tags="" position="1700,2375" size="100,100">Eithne laughs. It does not sound like she finds anything funny.
+
+&quot;I am only too glad that I cannot be of any help in this regard. Cruel irony it would have been if I could save the woman who caused me so much anguish.&quot;
+
+She turns her head upward and tastes the air with her serpent&#39;s tongue.
+
+&quot;The raven is lost to the woods and you yourself have taken my own eyes.&quot; She pauses a moment and frowns. &quot;When the rain of the Otherworld falls, it rises the next morning as fog. Whatever you&#39;ve washed away with rain, could return from the mist.&quot;
+
+You nod. The Fiddler will know how to solve this.
+
+&quot;Can I spend the night by this [[fire-&gt;EithneSight1]]?&quot; you ask</tw-passagedata><tw-passagedata pid="109" name="EithneSight1" tags="" position="1675,2525" size="100,100">&quot;Do what you will, I mean you no harm. I am done with violence and revenge.&quot;
+
+You curl up by the fire and close your eyes. You hear Eithne singing a song under her breath. Curious, you open your eyes. She kneels by Balor, running a hand through his wild hair. The [[rain-&gt;WoodsMorning]] drowns out the words of her song, and then drowns out all else as you fall asleep.</tw-passagedata><tw-passagedata pid="110" name="WoodsMorning" tags="" position="1825,2100" size="100,100">When you awake, the rain has stopped, and Eithne and Balor are nowhere to be seen.
+
+Around you, fog lies thick and motes of pale yellow light tickle their way amongst the solemn trunks. The wind subsides to a breeze. Your first [[dawn-&gt;FirstLeaf1]] in the Otherworld.</tw-passagedata><tw-passagedata pid="111" name="FirstLeaf1" tags="" position="1975,2100" size="100,100">Remembering what you have learned about the Otherworld, you feel for the clover that is still securely tucked behind your ear.
+
+One of the three leaves has wilted.
+
+You heart leaps in your chest. You must get back to the [[beach-&gt;BeachFiddlerSick]], to the Fiddler.</tw-passagedata><tw-passagedata pid="112" name="Title" tags="" position="450,250" size="100,100">Enora and the Fiddler
+
+An interactive fiction demo
+
+by Jacob Laden-Guindon
+
+[[Start]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
