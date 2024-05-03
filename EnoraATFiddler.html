@@ -9,7 +9,44 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play Enora and the Fiddler.</tw-noscript></noscript></tw-story>
-<tw-storydata name="Enora and the Fiddler" startnode="112" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="F660646B-95E0-4CC4-8C57-2F784146BE2C" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">html{</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="575,250" size="100,100">{(set: $delightedCount to 0)
+<tw-storydata name="Enora and the Fiddler" startnode="112" creator="Twine" creator-version="2.7.1" format="Harlowe" format-version="3.3.7" ifid="F660646B-95E0-4CC4-8C57-2F784146BE2C" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap');
+
+tw-sidebar {visibility: hidden}
+
+tw-story {background-image:url("https://senseicanada.github.io/enoraandthefiddler/media/foggyforest.jpg");
+  background-size: cover;
+  font-family: "Love Ya Like A Sister", cursive;
+  font-weight: 400;
+  color: #000000;
+  filter: sepia(40%);
+  
+}
+
+
+tw-passage {
+  
+ border-radius: 20px;
+  border: 0.5rem outset grey;
+  box-shadow: 0 0 0 0.75 black;
+  padding: 2% 2%;
+ background-color: rgb(171, 169, 150)
+	  
+}
+
+.enchantment-link, tw-link, a {
+	color: #1c0000; 
+  text-shadow: 0 0 5px #cb4b16;
+}
+
+.enchantment-link:visited, tw-link:visited, .enchantment-link.visited, tw-link.visited, a:visited {
+	color: #b00404; 
+}
+
+.enchantment-link:hover, tw-link:hover, a:hover {
+	color: #96afb3; 
+	font-weight: bold; 
+	text-shadow: 0 0 5px #168028;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="575,250" size="100,100">{(set: $delightedCount to 0)
 (set: $scaredCount to 0)
 (set: $fogMagic to false)
 (set: $sawMother to false)
@@ -313,7 +350,7 @@ $nonsenseString
 
 
 
-</tw-passagedata><tw-passagedata pid="29" name="Header" tags="header" position="700,50" size="100,100">{(link-rerun: &quot;show mood&quot;)[(show: ?mood)]
+</tw-passagedata><tw-passagedata pid="29" name="Header" tags="" position="700,50" size="100,100">{(link-rerun: &quot;show mood&quot;)[(show: ?mood)]
 [Enora is [a little delighted](smallDelighted|[very delighted](veryDelighted| and [a little afraid](smallFear|[very afraid](veryFear|. This is a placeholder for displaying mood.
 (if: $delightCount &gt;= 1 and $delightCount &lt;4)[(show: ?smallDelighted)]
 (if: $delightCount &gt;=4)[(hide: ?smallDelighted)(show: ?veryDelighted)]
@@ -586,7 +623,7 @@ You can&#39;t have the raven, but she tells you that you can get things you&#39;
 (after: _animateDelay+3s)[(change: ?eyesSnake, (text-color: blue))(animate: ?eyesSnake, &quot;pulse&quot;)(click: ?eyesSnake)[(replace: ?snakeBite)[$eyesPassage]]]
 }</tw-passagedata><tw-passagedata pid="40" name="SnakeCrushed" tags="" position="300,525" size="100,100">{(if:$windInland is true)[] |crushedHook&gt;[, then a hiss. But the serpent did not sink its fangs into Enora. There was a howling of wind and a dry snap like a beast cracking bone between its teeth. A branch fell from on high to crush the adder, like a hammer crashing against an impetuous nail.]
 (change: ?crushedHook, (text-color:white) + (align: &quot;&lt;==&quot;))}</tw-passagedata><tw-passagedata pid="41" name="SnakeEyes" tags="" position="300,650" size="100,100">{(if:$windInland is true)[]|eyesHook&gt;[. Enora plucked at the mist and held the two balls of dull light firm even as the serpent&#39;s corded body surged past her. She held its eyes firmly and hooded their glow. She could hear the adder slithering around her. (set: $snakeBlind to true)]
-(change: ?eyesHook, (text-color:orange)+(text-style: &quot;outline&quot;))}</tw-passagedata><tw-passagedata pid="42" name="Footer" tags="footer" position="850,50" size="100,100">
+(change: ?eyesHook, (text-color:orange)+(text-style: &quot;outline&quot;))}</tw-passagedata><tw-passagedata pid="42" name="Footer" tags="" position="850,50" size="100,100">
 _______________________
 (set: $passageName to  (passage:)&#39;s name) Debugging
 (text-color: red)[Passage name: (print: $passageName)]
@@ -928,16 +965,7 @@ Around you, the mist billows. You realize you will need to use it to ascend. You
 (if: $delightCount &gt;= $scaredCount)[(show: ?excited)]
 (if: $delightCount &lt; $scaredCount)[(show: ?nervous)]
 (click: ?magicWord)[(show: ?hiddenNext)]
-}
-
-
-In order to climb the cliffs you have to call the fog.
-
-The fog gives you a path up.
-
-Fearful- you loose your grip, you slip, the pit of your stomach falls out from under you, you fall. The fear of heights and the fear of falling, you foresee mother dying
-
-Delight- you can see a sunset, the path is clear, you feel joy in moving, you remember mother being encouraging, litterally offering you a hand to cross a gap.</tw-passagedata><tw-passagedata pid="79" name="FiddlerTeachRain0" tags="" position="1750,1525" size="100,100">{(set: $bowErase to &quot;my bow&quot;)
+}</tw-passagedata><tw-passagedata pid="79" name="FiddlerTeachRain0" tags="" position="1750,1525" size="100,100">{(set: $bowErase to &quot;my bow&quot;)
 (set: _bowErased to false)
 }[(display: &quot;FiddlerTeachRain1&quot;)](explainPassage|[
 
@@ -1263,7 +1291,11 @@ An interactive fiction demo
 
 by Jacob Laden-Guindon
 
-[[Start]]</tw-passagedata></tw-storydata>
+[[Start]]</tw-passagedata><tw-passagedata pid="113" name="Game play notes" tags="" position="300,925" size="100,100">Signal what&#39;s a decision, what&#39;s a transition.
+
+Shorter, more condensed.
+
+</tw-passagedata><tw-passagedata pid="114" name="TestBackground" tags="backtest" position="300,1100" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
