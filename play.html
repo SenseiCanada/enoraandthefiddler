@@ -347,7 +347,7 @@ $nonsenseString
 
 
 
-</tw-passagedata><tw-passagedata pid="29" name="Header" tags="header" position="700,50" size="100,100">{(set: $fearColor to &quot;#730b0b&quot;)
+</tw-passagedata><tw-passagedata pid="29" name="Header" tags="" position="700,50" size="100,100">{(set: $fearColor to &quot;#730b0b&quot;)
 (set: $delightColor to &quot;#b5a58f&quot;)
 (link-rerun: &quot;show mood&quot;)[(show: ?mood)]
 [Enora is [a little delighted](smallDelighted|[very delighted](veryDelighted| and [a little afraid](smallFear|[very afraid](veryFear|. This is a placeholder for displaying mood.
@@ -619,7 +619,7 @@ You can&#39;t have the raven, but she tells you that you can get things you&#39;
 (after: _animateDelay+3s)[(change: ?eyesSnake, (text-color: blue))(animate: ?eyesSnake, &quot;pulse&quot;)(click: ?eyesSnake)[(replace: ?snakeBite)[$eyesPassage]]]
 }</tw-passagedata><tw-passagedata pid="40" name="SnakeCrushed" tags="" position="300,525" size="100,100">{(if:$windInland is true)[] |crushedHook&gt;[, then a hiss. But the serpent did not sink its fangs into Enora. There was a howling of wind and a dry snap like a beast cracking bone between its teeth. A branch fell from on high to crush the adder, like a hammer crashing against an impetuous nail.]
 (change: ?crushedHook, (text-color:white) + (align: &quot;&lt;==&quot;))}</tw-passagedata><tw-passagedata pid="41" name="SnakeEyes" tags="" position="300,650" size="100,100">{(if:$windInland is true)[]|eyesHook&gt;[. Enora plucked at the mist and held the two balls of dull light firm even as the serpent&#39;s corded body surged past her. She held its eyes firmly and hooded their glow. She could hear the adder slithering around her. (set: $snakeBlind to true)]
-(change: ?eyesHook, (text-color:orange)+(text-style: &quot;outline&quot;))}</tw-passagedata><tw-passagedata pid="42" name="Footer" tags="footer" position="850,50" size="100,100">
+(change: ?eyesHook, (text-color:orange)+(text-style: &quot;outline&quot;))}</tw-passagedata><tw-passagedata pid="42" name="Footer" tags="" position="850,50" size="100,100">
 _______________________
 (set: $passageName to  (passage:)&#39;s name) Debugging
 (text-color: red)[Passage name: (print: $passageName)]
