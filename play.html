@@ -46,20 +46,20 @@ tw-passage {
 	color: #96afb3; 
 	font-weight: bold; 
 	text-shadow: 0 0 5px #168028;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="575,250" size="100,100">{(set: $delightedCount to 0)
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="575,250" size="100,100">{(set: $delightCount to 0)
 (set: $scaredCount to 0)
 (set: $fogMagic to false)
 (set: $sawMother to false)
 (set: $learnedFog to false)
 (set: $fogMagic to false)
 (set: $learnedRain to false)
-}My mother is dying. She claims she learned her (link-rerun: &quot;witchcraft&quot;)[(show: ?insertWitchcraft)(hide: ?insertWindow)(set: $scaredCount to it +1)(if: $delightedCount &gt;= 1)[(set: $delightedCount to 0)](hide:?whiskeyText)(show: ?whiskeyLink)] at the knee of Old Man Death. Still, she is dying.[
+}My mother is dying. She claims she learned her (link-rerun: &quot;witchcraft&quot;)[(show: ?insertWitchcraft)(hide: ?insertWindow)(set: $scaredCount to it +1)(if: $delightCount &gt;= 1)[(set: $delightCount to 0)](hide:?whiskeyText)(show: ?whiskeyLink)] at the knee of Old Man Death. Still, she is dying.[
 
 It is hard to remember Mother&#39;s stories about Old Man Death and the Otherworld. She stopped telling them to me. After each story, I would ask to learn her witchcraft. She always said no. I always asked anyway. Until finally there were no more stories. Sometimes I try to make up my own. Mother won&#39;t listen to them, so I go to the garden and tell them to the hemlock and the nightshade. They are sad stories, full of little girls like me. (link-rerun: &quot;I don&#39;t like to remember them after I tell them&quot;)[(hide: ?insertWitchcraft)(set: $scaredCount to it -1)(hide:?whiskeyLink)(show:?whiskeyText)]](insertWitchcraft|
 
-She will do nothing but lie smothered beneath her frayed quilts. She will do nothing but cough and watch the rain streak across our (link-rerun: &quot;little window&quot;)[(hide: ?insertWitchcraft)(show: ?insertWindow)(set: $delightedCount to it +1)(if: $scaredCount &gt;=1)[(set: $scaredCount to 0)](hide:?whiskeyText)(show: ?whiskeyLink)].[
+She will do nothing but lie smothered beneath her frayed quilts. She will do nothing but cough and watch the rain streak across our (link-rerun: &quot;little window&quot;)[(hide: ?insertWitchcraft)(show: ?insertWindow)(set: $delightCount to it +1)(if: $scaredCount &gt;=1)[(set: $scaredCount to 0)](hide:?whiskeyText)(show: ?whiskeyLink)].[
 
-Sometimes I will lie in bed with her and we will watch the rain together. When she sleeps, I brush her damp hair from her face. I try to sing gentle songs. There is no singing in our house, so I don&#39;t really know how to.  Mother hummed something once. It was when I was a much younger girl. She was grinding nutmeg and she hummed and I felt like I had just eaten apple pie. Then she stopped. I asked her if she had done witchcraft. She smiled and said she was thinking about the Otherworld, and then she told me a story I only half remember. (link-rerun:&quot;Even the taste of apple pie has left me&quot;)[(hide: ?insertWindow)(set: $delightedCount to it -1)(hide:?whiskeyLink)(show:?whiskeyText)].
+Sometimes I will lie in bed with her and we will watch the rain together. When she sleeps, I brush her damp hair from her face. I try to sing gentle songs. There is no singing in our house, so I don&#39;t really know how to.  Mother hummed something once. It was when I was a much younger girl. She was grinding nutmeg and she hummed and I felt like I had just eaten apple pie. Then she stopped. I asked her if she had done witchcraft. She smiled and said she was thinking about the Otherworld, and then she told me a story I only half remember. (link-rerun:&quot;Even the taste of apple pie has left me&quot;)[(hide: ?insertWindow)(set: $delightCount to it -1)(hide:?whiskeyLink)(show:?whiskeyText)].
 ](insertWindow|
 
 &quot;Enora, dearest,&quot; her voice rustles, a fading breeze. &quot;Is there any |whiskeyLink)[whiskey][whiskey]&lt;whiskeyText| left?&quot;
@@ -94,7 +94,7 @@ You stand up and [[look around-&gt;Fiddler Intro]].
 {
 (click: ?dangerHook)[(show: ?missionHook)(set: $scaredCount to it +1)]}</tw-passagedata><tw-passagedata pid="7" name="Fiddler Intro" tags="" position="1075,250" size="100,100">An impossibly large [[hourglass-&gt;FiddlerStartDialogue]] stands in front of the cold sky and the sea of rough slate. You see sand trickling from the top half of the hourglass like wilting leaves. 
 
-Sitting atop the hourglass is a gaunt figure, clad all in black with its back to you. The figure in black is playing a thoughtful tune on a small fiddle. You hesitate, wondering if the creature has seen you. Wondering if you could [[sneak away-&gt;BeachIntro]] to search for Old Man Death elswhere.</tw-passagedata><tw-passagedata pid="8" name="FiddlerStartDialogue" tags="" position="1275,200" size="100,100">{(set: $bowed to false)You know that Old Man Death was your mother&#39;s teacher. Whatever this creature is, there&#39;s no reason to be unnerved. You take deep breaths. One step forward and then another. How does one address a being of the Otherworld, you wonder.
+Sitting atop the hourglass is a gaunt figure, clad all in black with its back to you. The figure in black is playing a thoughtful tune on a small fiddle. You hesitate, wondering if the creature has seen you. Wondering if you could [[sneak away-&gt;BeachIntro]] to search for Old Man Death elswhere.</tw-passagedata><tw-passagedata pid="8" name="FiddlerStartDialogue" tags="" position="1275,200" size="100,100">(set: $bowed to false)You know that Old Man Death was your mother&#39;s teacher. Whatever this creature is, there&#39;s no reason to be unnerved. You take deep breaths. One step forward and then another. How does one address a being of the Otherworld, you wonder.
 
 [&quot;Greetings, lord,&quot; you say. You don&#39;t normally speak this loudly, but you think it&#39;s a good idea in this case. &quot;I would humbly ask for your help.&quot;
 
@@ -173,7 +173,7 @@ Outside, I heard a cartwheel squeaking. There were three knocks on our door.
 
 THE END
 (or rather AN END)
-[[Play again?-&gt;Start]]</tw-passagedata><tw-passagedata pid="14" name="FiddlerPolite" tags="" position="1550,200" size="100,100">The fiddle playing stops, and the figure turns to face you. A dark hood covers its head. Beneath it you see only shadow. From within the shadow there is faint [[laughter-&gt;FiddlerPolite1]], like someone both surprised and pleased to hear an old joke again.</tw-passagedata><tw-passagedata pid="15" name="FiddlerPolite1" tags="" position="1550,325" size="100,100">“You have me mistaken, my dear,” The figure in black sands up from the hourglass[ and returns your bow](showBow|. 
+[[Play again?-&gt;Start]]</tw-passagedata><tw-passagedata pid="14" name="FiddlerPolite" tags="" position="1550,200" size="100,100">The fiddle playing stops, and the figure turns to face you. A dark hood covers its head. Beneath it you see only shadow. From within the shadow there is faint [[laughter-&gt;FiddlerPolite1]], like someone both surprised and pleased to hear an old joke again.</tw-passagedata><tw-passagedata pid="15" name="FiddlerPolite1" tags="" position="1550,325" size="100,100">“You have me mistaken, my dear,” The figure in black stands up from the hourglass[ and returns your bow](showBow|. 
 
 “Though I am bound to his service and wear my cousin’s livery, I am not he who escorts mortal souls into the Great Beyond. No indeed. I am but a humble fiddler, he who is sworn to distract [[Old Man Death-&gt;FiddlerPolite2]] from his grim labors and lift his morale in the face of an eternity of service.” 
 
@@ -181,8 +181,8 @@ THE END
 (if: $bowed is true)[
 	(show: ?showBow)
 ]
-}</tw-passagedata><tw-passagedata pid="16" name="FiddlerPolite2" tags="" position="1550,450" size="100,100">(set: $delightCount to it +1)
-The Fiddler sets his bow to his strings once more and imitates the triumphant call of a fanfare.
+}</tw-passagedata><tw-passagedata pid="16" name="FiddlerPolite2" tags="" position="1550,450" size="100,100">{(set: $delightCount to it +1)
+}The Fiddler sets his bow to his strings once more and imitates the triumphant call of a fanfare.
 
 &quot;I&#39;ve not seen old mopey bones in ages.&quot;
 
@@ -229,8 +229,7 @@ He doesn&#39;t wait for an answer.
 
 &quot;I would begin your search by speaking with the hunter who lives in a hollow tree in the woods beyond the dunes.&quot; The Fiddler waves a hand gesturing to your left. &quot;He&#39;s quite blind, I have it on the best authority.&quot;
 
-[&quot;What about the [[brownies-&gt;FiddlerBrownie]]?&quot; you consider asking.]&lt;goBrownie| [You should also ask [[where the golden apples grow-&gt;FiddlerApple]].]&lt;goApple|[&quot;[[I shall be off then-&gt;Fiddler start choice]],&quot; you say.](leaving|
-{
+[&quot;What about the [[brownies-&gt;FiddlerBrownie]]?&quot; you consider asking.]&lt;goBrownie| [You should also ask [[where the golden apples grow-&gt;FiddlerApple]].]&lt;goApple|[&quot;[[I shall be off then-&gt;Fiddler start choice]],&quot; you say.](leaving|{
 (click: ?scroll)[(set: $showedScroll to true)(replace: ?scrollRevealed)[, but all you see are [eddies of ink]&lt;wormInk| dancing on the velum like [wriggling worms.]&lt;wormInk|]]
 (set: $timing to 1s)
 (live: $timing)[
@@ -239,7 +238,7 @@ He doesn&#39;t wait for an answer.
 (enchant: ?wormInk&#39;s chars, via (text-rotate: $rotation)+(text-rotate-y: $rotation))
 (either: (change: ?wormInk, (text-style: &quot;condense&quot;)), (change: ?wormInk, (text-style: &quot;none&quot;)))
 ]
-(if: $askedSight is true and $askedBrownine is true)[
+(if: $askedSight is true and $askedBrownie is true)[
 	(hide: ?goApple)
     (hide: ?goBrownie)
     (show:?leaving)
@@ -249,8 +248,7 @@ He doesn&#39;t wait for an answer.
 ]
 (if: $askedApple is true)[
 	(hide: ?goApple)
-]
-}
+]}
 </tw-passagedata><tw-passagedata pid="21" name="FiddlerBrownie1" tags="" position="1850,700" size="100,100">&quot;With a selkie&#39;s hair ring, you will be able to swim like a seal and reach the brownie&#39;s cove before your [[Welcome-&gt;Fiddler brownie 2]] runs out. Even if you could run without tiring, you would not reach the cove before your third sunset.&quot;
 
 &quot;My Welcome? What do you mean?&quot;</tw-passagedata><tw-passagedata pid="22" name="Fiddler brownie 2" tags="" position="1975,700" size="100,100">&quot;All visitors to the Otherworld are permitted to stay no longer than three sunsets. After the third sunset, you will be cast out and not permitted to return again for a year and a day.&quot;
@@ -274,9 +272,9 @@ You touch the small plant. You don&#39;t always listen to Mother&#39;s instructi
 (if: $askedSight is true)[
 	(hide: ?goSight)
 ]
-}</tw-passagedata><tw-passagedata pid="23" name="Fiddler start choice" tags="" position="1675,900" size="100,100">{[The Fiddler rolls up the scroll and tucks it away in his black clothes.](hideScroll|
+}</tw-passagedata><tw-passagedata pid="23" name="Fiddler start choice" tags="" position="1675,900" size="100,100">[The Fiddler rolls up the scroll and tucks it away in his black clothes.](hideScroll|
 
-}&quot;Quite the driven young heroine, I see. Your mother&#39;s pride must...&quot; Before he can continue, a fit of coughing forces the Fiddler to double over. He holds up a placating hand and takes out his fiddle again. The coughing subsides, and the Fiddler bows the first few notes of a tricksy reel.
+&quot;Quite the driven young heroine, I see. Your mother&#39;s pride must...&quot; Before he can continue, a fit of coughing forces the Fiddler to double over. He holds up a placating hand and takes out his fiddle again. The coughing subsides, and the Fiddler bows the first few notes of a tricksy reel.
 
 &quot;No, not quite right,&quot; he says to himself.
 
@@ -302,10 +300,9 @@ The Fiddler nods.
 
 &quot;But this rain, light as it is, won&#39;t do at all. The rocks will be slick and treacherous. You&#39;ll slip and break your neck, and that&#39;s no way for a heroine&#39;s story to end.&quot;
 
-You wonder if this is wise. Will the [woods]&lt;goWoods| be any less dangerous than the [cliffs]&lt;goCliffs|?
+You wonder if this is wise. Will the [woods]&lt;goWoods| be any less dangerous than the [cliffs]&lt;goCliffs|?{
 
-[&quot;Then teach some witchcraft to scale the [[slippery cliffs-&gt;FiddlerTeachFog]].&quot; [You can barely contain your excitement. Here it is at last.](excitedHook|[This had better work. You remember once when the villagers brought in a boy who had broken his back from falling off the cliffs. Mother told them he would never walk again.](sadHook|](confirmCliffs|
-{
+[&quot;Then teach some witchcraft to scale the [[slippery cliffs-&gt;FiddlerTeachFog]].&quot; [You can barely contain your excitement. Here it is at last.](excitedHook|[This had better work. You remember once when the villagers brought in a boy who had broken his back from falling off the cliffs. Mother told them he would never walk again.](sadHook|](confirmCliffs|}{
 (click: ?goWoods)[(go-to: &quot;FiddlerStartChoiceWoods&quot;)]
 (click: ?goCliffs)[(show: ?confirmCliffs)
 (if: $delightCount &gt;= $scaredCount)[
@@ -350,7 +347,9 @@ $nonsenseString
 
 
 
-</tw-passagedata><tw-passagedata pid="29" name="Header" tags="" position="700,50" size="100,100">{(link-rerun: &quot;show mood&quot;)[(show: ?mood)]
+</tw-passagedata><tw-passagedata pid="29" name="Header" tags="header" position="700,50" size="100,100">{(set: $fearColor to &quot;#730b0b&quot;)
+(set: $delightColor to &quot;#b5a58f&quot;)
+(link-rerun: &quot;show mood&quot;)[(show: ?mood)]
 [Enora is [a little delighted](smallDelighted|[very delighted](veryDelighted| and [a little afraid](smallFear|[very afraid](veryFear|. This is a placeholder for displaying mood.
 (if: $delightCount &gt;= 1 and $delightCount &lt;4)[(show: ?smallDelighted)]
 (if: $delightCount &gt;=4)[(hide: ?smallDelighted)(show: ?veryDelighted)]
@@ -377,10 +376,9 @@ __________________________
 
 (set: _blurry to true)]
 (if: _blurry is true)[(enchant: $washAway, (t8n-depart: &quot;blur&quot;))]
-</tw-passagedata><tw-passagedata pid="31" name="FiddlerTeachFog" tags="" position="1925,1400" size="100,100">&quot;Hm... There is one spell I can teach you. Yes, I will teach you to shape the mist and fog of this place. But careful how you use it, for the spell once uttered is wily and has a mind of its own. It may just as soon shape itself according to its whim as to yours.&quot;
+</tw-passagedata><tw-passagedata pid="31" name="FiddlerTeachFog" tags="" position="1925,1400" size="100,100">&quot;Hm... There is one spell I can teach you. Yes, I will teach you to shape the mist and fog of this place. But careful how you use it, for the spell once uttered is wily and has a mind of its own. It may just as soon shape itself according to its whim as to yours.&quot;{
 
-&quot;I |lessonText&gt;[am read][am ready](lesson| to learn,&quot; you say, [[barely controlling]&lt;spiralStart| your [excitement]&lt;excitement|.]&lt;hideExcite| [|witchcraftText)[Witchcraft][Witchcraft]&lt;witchcraft| at long last.](spiral1| [Surely once you&#39;ve mastered this spell, Mother will [relent]&lt;relent| and teach you more.](spiral2| [Or she&#39;ll just say [no]&lt;no| once again.](spiral3| [You&#39;ve gotten used to her [refusals]&lt;refuse|.](spiral4| [First witchcraft. Then stories. Then food. Then |medicine&gt;[medicine].](spiral5| [What if she rejects the elixir and punishes you for going to the Otherworld even when she forbade you to do so?](spiralFinal|
-{
+&quot;I |lessonText&gt;[am read][am ready](lesson| to learn,&quot; you say, [[barely controlling]&lt;spiralStart| your [excitement]&lt;excitement|.]&lt;hideExcite| [|witchcraftText)[Witchcraft][Witchcraft]&lt;witchcraft| at long last.](spiral1| [Surely once you&#39;ve mastered this spell, Mother will [relent]&lt;relent| and teach you more.](spiral2| [Or she&#39;ll just say [no]&lt;no| once again.](spiral3| [You&#39;ve gotten used to her [refusals]&lt;refuse|.](spiral4| [First witchcraft. Then stories. Then food. Then |medicine&gt;[medicine].](spiral5| [What if she rejects the elixir and punishes you for going to the Otherworld even when she forbade you to do so?](spiralFinal|}{
 (click: ?lesson)[
 	(go-to: &quot;FiddlerTeachFog1&quot;)
 ]
@@ -441,8 +439,7 @@ __________________________
 &quot;Mother will be angry with me,&quot; you brush the sand off your clothes and stand up.
 ](nextScared|
 
-The low trembling notes of the fiddle |linkCont)[[[continue-&gt;FiddlerTeachFog2]]][continue]&lt;textCont|. &quot;Look a little closer.[ Once you see it, just give it a little pinch. [Like this]&lt;activateHook|.&quot;]&lt;activatedHook|[&quot;](punctuation|](showAfterWord|
-{
+The low trembling notes of the fiddle |linkCont)[[[continue-&gt;FiddlerTeachFog2]]][continue]&lt;textCont|. &quot;Look a little closer.[ Once you see it, just give it a little pinch. [Like this]&lt;activateHook|.&quot;]&lt;activatedHook|[&quot;](punctuation|](showAfterWord|{
 (enchant: &quot;Mougenn&quot;, (text-style: &quot;blur&quot;))
 (click: ?magicWord)[
 	(show: ?showAfterWord)
@@ -482,8 +479,8 @@ The low trembling notes of the fiddle |linkCont)[[[continue-&gt;FiddlerTeachFog2
     (hide: ?textCont)
     (show: ?linkCont)
 ]
-}</tw-passagedata><tw-passagedata pid="33" name="FiddlerTeachFog2" tags="" position="1925,1650" size="100,100">(set: $learnedFog to true)
-Your hold nothing but damp air in your hands and the sand around you is empty.
+}</tw-passagedata><tw-passagedata pid="33" name="FiddlerTeachFog2" tags="" position="1925,1650" size="100,100">{(set: $learnedFog to true)
+}Your hold nothing but damp air in your hands and the sand around you is empty.
 
 &quot;Can you [teach]&lt;teach| me more?&quot; you ask.[
 
@@ -491,8 +488,7 @@ The Fiddler can&#39;t answer you immediately as his body is wracked by a shudder
 
 &quot;Your eagerness,&quot; he says hoarsely, &quot;does you credit. All in good time. Hurry and bring back the golden apple(if: $saveFiddlerQuest is true)[ and the hourglass]. I shall have another spell for you to learn when you return.&quot;
 
-&quot;Now off you go then,&quot; the Fiddler makes small shooing motions with his hands. &quot;Sunset is nearing and the [[cliffs-&gt;CliffsStart]] will be dry enough.&quot;](hidden|
-{
+&quot;Now off you go then,&quot; the Fiddler makes small shooing motions with his hands. &quot;Sunset is nearing and the [[cliffs-&gt;CliffsStart]] will be dry enough.&quot;](hidden|{
 (click: ?teach)[
 	(show: ?hidden)
 ]
@@ -623,7 +619,7 @@ You can&#39;t have the raven, but she tells you that you can get things you&#39;
 (after: _animateDelay+3s)[(change: ?eyesSnake, (text-color: blue))(animate: ?eyesSnake, &quot;pulse&quot;)(click: ?eyesSnake)[(replace: ?snakeBite)[$eyesPassage]]]
 }</tw-passagedata><tw-passagedata pid="40" name="SnakeCrushed" tags="" position="300,525" size="100,100">{(if:$windInland is true)[] |crushedHook&gt;[, then a hiss. But the serpent did not sink its fangs into Enora. There was a howling of wind and a dry snap like a beast cracking bone between its teeth. A branch fell from on high to crush the adder, like a hammer crashing against an impetuous nail.]
 (change: ?crushedHook, (text-color:white) + (align: &quot;&lt;==&quot;))}</tw-passagedata><tw-passagedata pid="41" name="SnakeEyes" tags="" position="300,650" size="100,100">{(if:$windInland is true)[]|eyesHook&gt;[. Enora plucked at the mist and held the two balls of dull light firm even as the serpent&#39;s corded body surged past her. She held its eyes firmly and hooded their glow. She could hear the adder slithering around her. (set: $snakeBlind to true)]
-(change: ?eyesHook, (text-color:orange)+(text-style: &quot;outline&quot;))}</tw-passagedata><tw-passagedata pid="42" name="Footer" tags="" position="850,50" size="100,100">
+(change: ?eyesHook, (text-color:orange)+(text-style: &quot;outline&quot;))}</tw-passagedata><tw-passagedata pid="42" name="Footer" tags="footer" position="850,50" size="100,100">
 _______________________
 (set: $passageName to  (passage:)&#39;s name) Debugging
 (text-color: red)[Passage name: (print: $passageName)]
@@ -784,7 +780,8 @@ Balor extends a hand towards the net. You think you see it trembling.]
 	(show: ?daughter)
 ]
 (if: not $hasSnake and not $talked)[
-	(show: ?witch)
+	(show: ?bread)
+    (show: ?witch)
 ]
 (click: ?Eithne)[
 	(go-to: &quot;Eithne&quot;)
@@ -1295,7 +1292,53 @@ by Jacob Laden-Guindon
 
 Shorter, more condensed.
 
-</tw-passagedata><tw-passagedata pid="114" name="TestBackground" tags="backtest" position="300,1100" size="100,100"></tw-passagedata></tw-storydata>
+</tw-passagedata><tw-passagedata pid="114" name="TestBackground" tags="backtest" position="300,1100" size="100,100"></tw-passagedata><tw-passagedata pid="115" name="BlurTest" tags="" position="1050,50" size="100,100">{(enchant:?eyesErased, (text-style: &quot;bold&quot;) +(text-color: $fearColor) + (hover-style:(text-style:&#39;blur&#39;, &quot;sway&quot;)))
+(enchant:?fangsErased, (hover-style:(text-style:&#39;blur&#39;)))
+}You freeze. One of the gnarled roots before you slithers forward and raises a dagger-like head. 
+
+{[The adder is as thick as a man&#39;s leg, and regards you with |eyesErased&gt;[milky, lamplike eyes]. Its forked tongue darts forth once, twice, three times. It opens its mouth, showing [[bone white fangs]&lt;fangsErased|], and strikes out toward your ankle.]&lt;original|
+
+[|revealed1)[The adder is as thick as a man&#39;s leg, and blind, its |blindEyes)[milky, lamplike eyes] eyes nothing but weeping dimples. Its forked tongue darts [[forth-&gt;CampArrive]] once, twice, three times. The head quests about, then the serpent slithers away from you.]]
+
+|revealed2)[The adder is as thick as a man&#39;s leg, and regards you with milky, lamplike eyes. Its forked tongue darts [[forth-&gt;CampArrive1]] once, twice, three times. It opens its mouth, showing [bone white fangs](noFangs| a harmless, wet mouth. The snake nibbles at your ankle, then wraps itself up your leg, up your torso, and coils loosely like a heavy scarf around your shoulders]}{
+
+(click: ?eyesErased, (action: &quot;mouseout&quot;))[
+	(show: ?revealed1)
+    (show: ?blindEyes)
+    (hide: ?original)
+]
+
+(click: ?fangsErased, (action: &quot;mouseout&quot;))[
+	(show: ?revealed2)  
+    (show: ?noFangs)
+    (hide: ?original)
+]
+(enchant: ?blindEyes, (text-style: &quot;blurrier&quot;)+(opacity: 0.5)+(text-color: $fearColor))
+(enchant: ?noFangs, (text-style: &quot;blurrier&quot;)+(opacity: 0.5))
+}</tw-passagedata><tw-passagedata pid="116" name="CampArrive1" tags="" position="925,425" size="100,100"></tw-passagedata><tw-passagedata pid="117" name="LinkDecisionTest" tags="" position="1200,50" size="100,100">{(set: $fearColor to &quot;#730b0b&quot;)
+(set: $delightColor to &quot;#b5a58f&quot;)
+(enchant: ?witchLink, (text-color: $fearColor))
+(enchant: ?windowLink, (text-color: $delightColor))
+}My mother is dying. She claims she learned her [witchcraft]&lt;witchLink| at the knee of Old Man Death. Still, she is dying.[
+
+It is hard to remember Mother&#39;s stories about Old Man Death and the Otherworld. She stopped telling them to me. After each story, I would ask to learn her witchcraft. She always said no. I always asked anyway. Until finally there were no more stories. Sometimes I try to make up my own. Mother (link-rerun: &quot;won&#39;t listen&quot;)[(hide: ?insertWitchcraft)] to them, so I go to the garden and tell them to the hemlock and the nightshade. They are sad stories, full of little girls like me.](insertWitchcraft|
+
+She will do nothing but lie smothered beneath her frayed quilts. She will do nothing but cough and watch the rain streak across our |windowLink&gt;[little window].[
+
+Sometimes I will lie in bed with her and we will watch the rain together. When she sleeps, I brush her damp hair from her face. I try to sing gentle songs. There is no singing in our house, so I don&#39;t really know how to.  Mother hummed something once. It was when I was a much younger girl. She was grinding nutmeg and she hummed and I felt like I had just eaten apple pie. Then she stopped. I asked her if she had done witchcraft. She smiled and said she was thinking about the Otherworld, and then she told me a story I only half remember.(link-rerun:&quot;Even the taste of apple pie has left me&quot;)[(hide: ?insertWindow)]
+](insertWindow|
+
+&quot;Enora, dearest,&quot; her voice rustles, a fading breeze. &quot;Is there any |whiskeyLink)[whiskey][whiskey]&lt;whiskeyText| left?&quot;{
+
+(click: ?whiskeyLink)[(go-to: &quot;I look around the cottage&quot;)]
+
+(click-rerun: ?witchLink)[
+	(show: ?insertWitchcraft)
+]
+(click-rerun: ?windowLink)[
+	(show: ?insertWindow)
+]
+}</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
